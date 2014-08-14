@@ -1,4 +1,21 @@
 function indexCtrl ($scope, $http, $rootScope, $location) {
+  $scope.which_question = 1;
+  $scope.answers = function() {
+    console.log($scope.ans_first_present);
+    
+    if ($scope.ans_first_present == "書籤" || $scope.ans_first_present == "愛心書籤") {
+      $scope.which_question = 2;
+    };
+
+    if ($scope.ans_secound_present == "0802") {
+      $scope.which_question = 3;
+    };
+
+    if ($scope.ans_third_present == "相機") {
+      $scope.which_question = 4;
+    };
+
+  };
 
   $scope.makeTimer = function(){
 

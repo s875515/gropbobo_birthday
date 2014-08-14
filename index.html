@@ -73,8 +73,8 @@
 					  <div class="bizcocho"></div>
 					</div>
 				</div>
-				<p class="title-h2 title-h3" ng-if="is_today == false">距離 {{now_year}} 年8月18日還有：</p>
-				<p class="title-h2 title-h3" ng-if="is_today == true">今天就是妳的生日，北鼻Happy Birthday</p>
+				<p class="title-h2 title-h3" ng-if="is_today == false">距離 {{now_year}} 年8月18日：</p>
+				<p class="title-h2 title-h3" ng-if="is_today == true">今天就是妳的生日，Happy Birthday Dear.</p>
 				<div id="timer">
 				  <div id="days"></div>
 				  <div id="hours"></div>
@@ -99,14 +99,33 @@
 				<section class="section-heart">
 					<div class="love-animate"></div>
 				</section>
-<!-- 				<section class="related">
-					<p>你願意讓我陪著妳倒數每一年嗎？</p>
+				<section class="related">
+					<p ng-show="which_question == 4">你願意讓我陪著妳倒數每一年嗎？</p>
+					<p ng-hide="which_question == 4">請回答下面問題，確定您是CHUNG SHIN就可以看卡片囉</p>
 				</section>
-				<section class="choose_section">
+				<section class="question-section">
+					<p ng-show="which_question == 1">一.請問，第一個送妳的禮物是什麼？</p>
+					<p ng-show="which_question == 2">二.請問，我們在一起紀念日是幾月幾號？</p>
+					<p ng-show="which_question == 3">三.請問，我第一次去桃園拿什麼東西給妳？</p>
+					<input class="input-question" type="text" ng-model="ans_first_present" ng-show="which_question == 1">
+					<input class="input-question" type="text" ng-model="ans_secound_present" ng-show="which_question == 2" placeholder="ex: 0818">
+					<input class="input-question" type="text" ng-model="ans_third_present" ng-show="which_question == 3">
+					<div class="div-heart">
+						<a href="#" id="go" ng-hide="which_question == 4" class="button heart" ng-click="answers()"></a>
+					</div>
+				</section>
+				<section ng-show="which_question == 4" class="choose-section">
 					<a href="#" class="button tick"></a>
 				  <a href="#" class="button cross"></a>
-				</section> -->
-			  <!-- <a href="#" class="button heart"></a> -->
+				</section>
+				<div class="wrapper">
+				  <input type="checkbox" id="ck1"/>
+				  <label for="ck1">I</label>
+				  <input type="checkbox" id="ck2"/>
+				  <label for="ck2">love</label>
+				  <input type="checkbox" id="ck3"/>
+				  <label for="ck3">you</label>
+				</div>
 			</div>
 		</div><!-- /container -->
 		<script src="js/classie.js"></script>
