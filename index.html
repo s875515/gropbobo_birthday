@@ -102,7 +102,8 @@
 				<section class="related">
 					<p ng-show="which_question == 4">安安北鼻長欣～</p>
 					<p ng-show="which_question == 4">你願意讓我陪著妳倒數每一年嗎？</p>
-					<p class="oops-class" ng-show="oops == 5">oops! 我知道妳手滑按錯，再給妳一次機會選擇！</p>
+					<p class="oops-class" ng-show="oops == 5 && click_show_card == false">oops! 我知道妳手滑按錯，再給妳一次機會選擇！</p>
+					<p class="oops-class" ng-show="oops == 5 && is_today == false && click_show_card == true">oops! 生日當天才能看卡片喔ㄏㄏㄏ</p>
 					<p ng-hide="which_question == 4">請回答下面問題，確定您是CHUNG SHIN就可以看卡片囉</p>
 				</section>
 				<section class="question-section">
@@ -120,7 +121,7 @@
 					</div>
 				</section>
 				<section ng-show="which_question == 4" class="choose-section">
-					<a href="#" class="button tick" ng-click="show_card = true"></a>
+					<a href="#" class="button tick" ng-click="showCard()"></a>
 				  <a href="#" id="hide_btn" class="button cross" ng-click="hide_card()"></a>
 				</section>
 				<div id="card" ng-show="show_card == true">
@@ -130,9 +131,9 @@
 			        <p>阿哈哈哈，我就知道妳一定會同意我每一年都陪著妳，因為也沒拒絕的機會啊哈哈哈哈</p>
 			        <p>很高興能遇見你，而且跟妳在一起，我真的覺得很爽～</p>
 			        <p>八月十八日是個特別的日子，做了這個網站，每年都會倒數妳的生日。</p>
-			        <p>生日當天會停止倒數，妳可以再連上這網站看兒～</p>
+			        <p>花很多時間偷偷做的，尤其在妳睡覺的時候ㄏㄏ</p>
+			        <p>希望你會喜歡兒～ ps 每天都想抱著妳睡嗚嗚</p>	
 			        <p>我不敢說永遠，但我一定會很努力珍惜這段感情，不輕易放棄和妳一樣～</p>
-			        <p>每天晚上都希望能抱著妳睡嗚嗚嗚嗚</p>	
 			        <p>繼續一起努力唄～～～ love u</p>
 			        <p>很愛妳也很喜歡妳，雖然吵了不少架，但以後若遇到什麼問題我想都難不倒我們的。鄭長欣我愛妳兒</p>
 			        <p class="signed">From 嘉恩</p>

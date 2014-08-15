@@ -1,5 +1,6 @@
 function indexCtrl ($scope, $http, $rootScope, $location) {
   $scope.which_question = 1;
+  $scope.click_show_card = false;
   $(".wrong-icon").hide();
   $scope.answers1 = function() {
     if (($scope.ans_first_present == "書籤" || $scope.ans_first_present == "愛心書籤") && $scope.which_question == 1) {
@@ -29,8 +30,18 @@ function indexCtrl ($scope, $http, $rootScope, $location) {
   };
 
   $scope.hide_card = function() {
+    $scope.click_show_card = false;
     $("#hide_btn").addClass("to-hide-any");
     $scope.oops = 5;
+  };
+
+  $scope.showCard = function() {
+    $scope.oops = 5;
+    $scope.click_show_card = true;
+    if ($scope.is_today == false) {
+      return;
+    };
+    $scope.show_card = true;
   };
 
   $scope.makeTimer = function(){
