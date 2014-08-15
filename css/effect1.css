@@ -53,6 +53,16 @@
 }
 
 @import url(http://fonts.googleapis.com/css?family=Bad+Script);
+  
+.wrong-icon{
+  position: absolute;
+  top: 40px;
+  right: 26px;
+  font-size: 40px;
+  color: red;
+  text-shadow: 3px 1px 10px #FFFFFF;
+}
+
 .wrapper {
   width: 500px; height: 500px;
   position: relative;
