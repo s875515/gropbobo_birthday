@@ -1,31 +1,36 @@
 function indexCtrl ($scope, $http, $rootScope, $location) {
   $scope.which_question = 1;
   $(".wrong-icon").hide();
-  $scope.answers = function() {
-    console.log($scope.ans_first_present);
-
-    if ($scope.ans_third_present == "相機" && $scope.which_question == 3) {
-      $(".wrong-icon").hide();
-      $scope.which_question = 4;
-    }else{
-      $(".wrong-icon").show();
-    };
-
-    if ($scope.ans_secound_present == "0802" && $scope.which_question == 2) {
-      $(".wrong-icon").hide();
-      $scope.which_question = 3;
-    }else{
-      $(".wrong-icon").show();
-    };
-    
+  $scope.answers1 = function() {
     if (($scope.ans_first_present == "書籤" || $scope.ans_first_present == "愛心書籤") && $scope.which_question == 1) {
       $(".wrong-icon").hide();
       $scope.which_question = 2;
     }else{
       $(".wrong-icon").show();
     };
-    
+  };
 
+  $scope.answers2 = function() {
+    if ($scope.ans_secound_present == "0802" && $scope.which_question == 2) {
+      $(".wrong-icon").hide();
+      $scope.which_question = 3;
+    }else{
+      $(".wrong-icon").show();
+    };
+  };
+
+  $scope.answers3 = function() {
+    if ($scope.ans_third_present == "相機" && $scope.which_question == 3) {
+      $(".wrong-icon").hide();
+      $scope.which_question = 4;
+    }else{
+      $(".wrong-icon").show();
+    };
+  };
+
+  $scope.hide_card = function() {
+    $("#hide_btn").addClass("to-hide-any");
+    $scope.oops = 5;
   };
 
   $scope.makeTimer = function(){
@@ -75,3 +80,5 @@ function indexCtrl ($scope, $http, $rootScope, $location) {
 
 
 };
+
+
