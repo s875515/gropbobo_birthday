@@ -48,7 +48,7 @@ function indexCtrl ($scope, $http, $rootScope, $location) {
 
     var now = new Date();
     var now_temp = new Date();
-
+    console.log(now);
     $scope.now_year = now.getFullYear();
     var now_month = now.getMonth()+1;
     var now_day = now.getDate();
@@ -60,9 +60,9 @@ function indexCtrl ($scope, $http, $rootScope, $location) {
       $scope.is_today = true;
     }else if(now_month == 8 && now_day == 19) { //等待明年囉
       $scope.now_year = $scope.now_year + 1;
-      var endTime = new Date("August 18, " + $scope.now_year + " 00:00:00 PDT");
+      var endTime = new Date("August 18, " + $scope.now_year + " 00:00:00");
     }else{
-      var endTime = new Date("August 18, " + $scope.now_year + " 00:00:00 PDT");
+      var endTime = new Date("August 18, " + $scope.now_year + " 00:00:00");
     };
 
     $scope.$apply();
