@@ -48,7 +48,6 @@ function indexCtrl ($scope, $http, $rootScope, $location) {
 
     var now = new Date();
     var now_temp = new Date();
-    console.log(now);
     $scope.now_year = now.getFullYear();
     var now_month = now.getMonth()+1;
     var now_day = now.getDate();
