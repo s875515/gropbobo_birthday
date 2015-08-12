@@ -2,8 +2,8 @@
 <html lang="en" class="no-js" ng-app>
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Page Preloading Effect | Demo 1</title>
 		<meta name="description" content="Page Preloading Effect: Re-creating the effect seen on fontface.ninja" />
 		<meta name="keywords" content="page loading, effect, initial, logo, sliding, web design, css animation, transform" />
@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/effect1.css" />
+		<link rel="stylesheet" type="text/css" href="css/timeline.css">
 		<link rel="stylesheet prefetch" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 		<script src="js/modernizr.custom.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -73,87 +74,86 @@
 					  <div class="bizcocho"></div>
 					</div>
 				</div>
-				<p class="title-h2 title-h3" ng-if="is_today == false">距離 {{now_year}} 年8月18日：</p>
-				<p class="title-h2 title-h3" ng-if="is_today == true">今天就是妳的生日，Happy Birthday Dear ~~</p>
+				<p class="title-h2 title-h3" ng-if="is_today === false">{{now_year}} 8 18 countdown in</p>
+				<p class="title-h2 title-h3" ng-if="is_today === true">Today is your Birthday Dear ~~</p>
 				<div id="timer">
 				  <div id="days"></div>
 				  <div id="hours"></div>
 				  <div id="minutes"></div>
 				  <div id="seconds"></div>
 				</div>
-				<div class="browser clearfix">
-					<div class="box">
-						<span class="icon-bell"></span>
-						<p>Do Re Mi What Fa Si Ti Doi Nemo Do Re Mi What Fa Si Ti Doi Nemo</p>
-					</div>
-					<div class="box">
-						<span class="icon-heart"></span>
-						<p>E La Yo Na Ti Do Pa Pa Noah Do Re Mi What Fa Si Ti Doi Nemo</p>
-					</div>
-					<div class="box">
-						<span class="icon-cog"></span>
-						<p>No way! Hey Hey, me ok! Do Re Mi What Fa Si Ti Doi Nemo</p>
-					</div>
-				</div>
-				<!-- related demos -->
-<!-- 				<section class="section-heart">
-					<div class="love-animate"></div>
-				</section> -->
-				<section class="related">
-					<p ng-show="which_question == 4">安安北鼻長欣～</p>
-					<p ng-show="which_question == 4">你願意讓我陪著妳倒數每一年嗎？</p>
-					<p class="oops-class" ng-show="oops == 5 && click_show_card == false">oops! 我知道妳手滑按錯，再給妳一次機會選擇！</p>
-					<p class="oops-class" ng-show="oops == 5 && is_today == false && click_show_card == true">oops! 生日當天才能看卡片喔ㄏㄏㄏ</p>
-					<p ng-hide="which_question == 4">請回答下面問題，確定您是CHUNG SHIN就可以看卡片囉</p>
-				</section>
-				<section class="question-section">
-					<p class="wrong-icon">✖</p>
-					<p ng-show="which_question == 1">一.請問，第一個送妳的禮物是什麼？</p>
-					<p ng-show="which_question == 2">二.請問，我們在一起紀念日是幾月幾號？</p>
-					<p ng-show="which_question == 3">三.請問，我第一次去桃園拿什麼東西給妳？</p>
-					<input class="input-question" type="text" ng-model="ans_first_present" ng-show="which_question == 1">
-					<input class="input-question" type="text" ng-model="ans_secound_present" ng-show="which_question == 2" placeholder="ex: 0818">
-					<input class="input-question" type="text" ng-model="ans_third_present" ng-show="which_question == 3">
-					<div class="div-heart">
-						<a href="#" id="go" ng-show="which_question == 1" class="button heart" ng-click="answers1()"></a>
-						<a href="#" id="go" ng-show="which_question == 2" class="button heart" ng-click="answers2()"></a>
-						<a href="#" id="go" ng-show="which_question == 3" class="button heart" ng-click="answers3()"></a>
-					</div>
-				</section>
-				<section ng-show="which_question == 4" class="choose-section">
-					<a href="#" class="button tick" ng-click="showCard()"></a>
-				  <a href="#" id="hide_btn" class="button cross" ng-click="hide_card()"></a>
-				</section>
-				<div id="card" ng-show="show_card == true">
-			    <div id="card-inside">
-			      <div class="wrap">
-			        <p>Dear長欣</p>
-			        <p>阿哈哈哈，我就知道妳一定會同意我每一年都陪著妳，因為也沒拒絕的機會啊哈哈哈哈</p>
-			        <img src="../pic.JPG" width="150px" height="200px">
-			        <p style="display: inline-block; width: 50%;">很高興能遇見你，而且跟妳在一起，我真的覺得很爽～   這個網站花
-			        	很多時間偷偷做的，尤其在妳睡覺的時候ㄏㄏ。明明才剛送妳去捷運站，想你了...</p>
-			        <p>我一定會很努力珍惜這段感情，不輕易放棄和妳一樣～ 繼續一起努力唄～～～ love u</p>
-			        <p>很愛妳也很喜歡妳，雖然吵了不少架，但以後若遇到什麼問題我想都難不倒我們的。鄭長欣我愛妳兒</p>
-			        <p class="signed">From 嘉恩</p>
-			      </div>
-			    </div>
-			    <div id="card-front">
-			      <div class="wrap">
-			        <h1>Happy Birthday!</h1>
-			      </div>
-			      <button id="open">&gt;</button>
-			      <button id="close">&lt;</button>
-			    </div>
-			  </div>
-<!-- 				<div class="wrapper">
-				  <input type="checkbox" id="ck1"/>
-				  <label for="ck1">I</label>
-				  <input type="checkbox" id="ck2"/>
-				  <label for="ck2">love</label>
-				  <input type="checkbox" id="ck3"/>
-				  <label for="ck3">you</label>
-				</div> -->
 			</div>
+			<section id="timeline">
+			  <article>
+			    <div class="inner">
+			      <span class="date">
+			        <span class="day">31<sup>th</sup></span>
+			        <span class="month">5</span>
+			        <span class="year">2014</span>
+			      </span>
+			      <h2>還沒在一起a偷拍</h2>
+			      <p>
+							稍微給他很害秋啦～～
+							<img src="img/2014-05-31 20.15.13.jpg" alt="" />
+						</p>
+			    </div>
+			  </article>
+			  <article>
+			    <div class="inner">
+			      <span class="date">
+			        <span class="day">24<sup>th</sup></span>
+			        <span class="month">6</span>
+			        <span class="year">2014</span>
+			      </span>
+			      <h2>在一起之第一次約會</h2>
+			      <p>第一次約會就從竹南騎車到台北會不會太充實。
+							<img src="img/P6221792.jpg" alt="" />
+						</p>
+			    </div>
+			  </article>
+			  <article>
+			    <div class="inner">
+			      <span class="date">
+			        <span class="day">2<sup>th</sup></span>
+			        <span class="month">7</span>
+			        <span class="year">2014</span>
+			      </span>
+			      <h2>公主出巡</h2>
+			      <p>
+							前面的讓開！！！！
+							<img src="img/P7260002.jpg"/>
+						</p>
+			    </div>
+			  </article>
+			  <article>
+			    <div class="inner">
+			      <span class="date">
+			        <span class="day">26<sup>th</sup></span>
+			        <span class="month">Jan</span>
+			        <span class="year">2014</span>
+			      </span>
+			      <h2>我們的紀念日</h2>
+			      <p>
+							說實在我不懂你以什麼為根據把這天當成紀念日的顆。
+							<img src="img/pic.jpg" alt="" />
+						</p>
+			    </div>
+			  </article>
+			  <article>
+			    <div class="inner">
+			      <span class="date">
+			        <span class="day">∞<sup>th</sup></span>
+			        <span class="month">Forever</span>
+			        <span class="year">∞</span>
+			      </span>
+			      <h2>Forever</h2>
+			      <p>
+							Love u Dear.
+							<img src="img/20141207110935.jpg" alt="" />
+						</p>
+			    </div>
+			  </article>
+			</section>
 		</div><!-- /container -->
 		<script src="js/classie.js"></script>
 		<script src="js/pathLoader.js"></script>
