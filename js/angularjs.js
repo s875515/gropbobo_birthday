@@ -11,7 +11,7 @@ function indexCtrl ($scope, $http, $rootScope, $location) {
 
     now = (Date.parse(now) / 1000);
 
-    if (now_month === 8 && now_day === 18) { //就是今天囉
+    if (now_month === 8 && now_day === 18) { //8.18
       var endTime = new Date();
       $scope.is_today = true;
     } else if ((now_month === 8 && now_day >= 19) && now_month >= 8) { //8.19~12.31
