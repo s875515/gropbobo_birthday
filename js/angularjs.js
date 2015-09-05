@@ -1,5 +1,12 @@
 function indexCtrl ($scope, $http, $rootScope, $location) {
 
+  $http({
+  	url: 'lovedata.json',
+  	method: 'get'
+  }).success(function(successRes) {
+    $scope.datas = successRes.data;
+  });
+
   $scope.makeTimer = function(){
 
     var now = new Date();
@@ -14,7 +21,7 @@ function indexCtrl ($scope, $http, $rootScope, $location) {
     if (now_month === 8 && now_day === 18) { //8.18
       var endTime = new Date();
       $scope.is_today = true;
-    } else if ((now_month === 8 && now_day >= 19) && now_month >= 8) { //8.19~12.31
+    } else if ((now_month === 8 && now_day >= 19) || (now_month > 8 && now_day >= 1) && now_month >= 8) { //8.19~12.31
       $scope.now_year = $scope.now_year + 1;
       var endTime = new Date("August 18, " + $scope.now_year + " 00:00:00");
     } else { //1.1~8.17
@@ -43,6 +50,5 @@ function indexCtrl ($scope, $http, $rootScope, $location) {
   };
 
   setInterval(function() { $scope.makeTimer(); }, 1000);
-
 
 };

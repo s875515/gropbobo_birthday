@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/effect1.css" />
 		<link rel="stylesheet" type="text/css" href="css/timeline.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
 		<link rel="stylesheet prefetch" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 		<script src="js/modernizr.custom.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -83,7 +84,7 @@
 					  <div class="bizcocho"></div>
 					</div>
 				</div>
-				<p class="title-h2 title-h3" ng-if="is_today === false">{{now_year}} 8 18 countdown in</p>
+				<p class="title-h2 title-h3 animated bounceOutLeft" ng-if="is_today === false">{{now_year}} 8 18 countdown in</p>
 				<p class="title-h2 title-h3" ng-if="is_today === true">Today is your Birthday Shin Dear ~~</p>
 				<div id="timer" ng-if="is_today === false">
 				  <div id="days"></div>
@@ -93,72 +94,17 @@
 				</div>
 			</div>
 			<section id="timeline">
-			  <article>
+			  <article ng-repeat="data in datas">
 			    <div class="inner">
 			      <span class="date">
-			        <span class="day">31<sup>th</sup></span>
-			        <span class="month">5</span>
-			        <span class="year">2014</span>
+			        <span class="day">{{data.day}}<sup>th</sup></span>
+			        <span class="month">{{data.month}}</span>
+			        <span class="year">{{data.year}}</span>
 			      </span>
-			      <h2>還沒在一起a偷拍</h2>
+			      <h2>{{data.title}}</h2>
 			      <p>
-							稍微給他很害秋啦～～
-							<img src="img/2014-05-31 20.15.13.jpg" alt="" />
-						</p>
-			    </div>
-			  </article>
-			  <article>
-			    <div class="inner">
-			      <span class="date">
-			        <span class="day">24<sup>th</sup></span>
-			        <span class="month">6</span>
-			        <span class="year">2014</span>
-			      </span>
-			      <h2>還沒交往之第一次約會</h2>
-			      <p>第一次約會就從竹南騎車到台北會不會太充實。
-							<img src="img/P6221792.jpg" alt="" />
-						</p>
-			    </div>
-			  </article>
-			  <article>
-			    <div class="inner">
-			      <span class="date">
-			        <span class="day">26<sup>th</sup></span>
-			        <span class="month">6</span>
-			        <span class="year">2014</span>
-			      </span>
-			      <h2>公主出巡</h2>
-			      <p>
-							前面的讓開！！！！
-							<img src="img/P7260002.jpg"/>
-						</p>
-			    </div>
-			  </article>
-			  <article>
-			    <div class="inner">
-			      <span class="date">
-			        <span class="day">2<sup>th</sup></span>
-			        <span class="month">7</span>
-			        <span class="year">2014</span>
-			      </span>
-			      <h2>我們的紀念日</h2>
-			      <p>
-							說實在我不懂你以什麼為根據把這天當成紀念日的顆。
-							<img src="img/pic.JPG" alt="" />
-						</p>
-			    </div>
-			  </article>
-			  <article>
-			    <div class="inner">
-			      <span class="date">
-			        <span class="day">∞<sup>th</sup></span>
-			        <span class="month">Forever</span>
-			        <span class="year">∞</span>
-			      </span>
-			      <h2>Forever</h2>
-			      <p>
-							Love u Dear.
-							<img src="img/20141207110935.jpg" alt="" />
+							{{data.text}}
+							<img ng-src="{{data.img}}" alt="" />
 						</p>
 			    </div>
 			  </article>
